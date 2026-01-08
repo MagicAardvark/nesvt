@@ -13,24 +13,28 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: "yarn"
-          cache-dependency-path: site/yarn.lock
+          cache: "pnpm"
+          cache-dependency-path: site/pnpm-lock.yaml
 
       - name: Install dependencies
         working-directory: site
-        run: yarn install --frozen-lockfile
+        run: pnpm install --frozen-lockfile
 
       - name: Build
         working-directory: site
-        run: yarn build
+        run: pnpm build
 
       - name: Deploy to GitHub Pages
         working-directory: site
         run: |
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-          yarn gh-pages -d dist -u "github-actions-bot <support+actions@github.com>"
+          pnpm gh-pages -d dist -u "github-actions-bot <support+actions@github.com>"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
