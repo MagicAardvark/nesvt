@@ -1,3 +1,9 @@
 webcontent/*.html
 node_modules
 results-beta
+
+# Build output
+dist/
+
+# OS files
+.DS_Store
