@@ -15,14 +15,17 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: "22"
-          cache: "npm"
-          cache-dependency-path: site/package-lock.json
+          node-version: "20"
 
-      - run: npm ci
+      - name: Clean npm cache
+        run: npm cache clean --force
+
+      - name: Install dependencies
+        run: npm install --legacy-peer-deps
         working-directory: site
 
-      - run: npm run build
+      - name: Build
+        run: npm run build
         working-directory: site
 
       - name: Deploy to GitHub Pages
@@ -32,4 +35,3 @@ jobs:
           npx gh-pages -d dist -u "github-actions-bot <support+actions@github.com>"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
