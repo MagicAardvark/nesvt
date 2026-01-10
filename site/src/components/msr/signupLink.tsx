@@ -64,14 +64,14 @@ export default function SignUpLink(props: {
     return foundMsrEvent;
   }
 
-  if (!hasMsrEvent(props.event, props.msrEvents)) {
+  if (!hasMsrEvent(props.event, props.msrEvents) ) {
     return (
       <>
         <p className="desc">Registration will open 30 days prior.</p>
         <ul>
           <li style={{ width: "50%" }}>
             <a href="#website">
-              <span className="fa fa-globe"></span> Event signup coming soon
+              <span className="fa fa-globe"></span> {now < parseDate(props.event.startDate) ? "Event signup coming soon" : "Past Event"}
             </a>
           </li>
         </ul>

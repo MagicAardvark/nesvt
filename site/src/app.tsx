@@ -29,7 +29,7 @@ function App() {
     var year = d.getFullYear();
     var month = 1
     var day = 1
-    return new Date(year - 1, month, day).toISOString().split("T")[0];
+    return new Date(year, month, day).toISOString().split("T")[0];
   }
 
   function eventsPath(): string {

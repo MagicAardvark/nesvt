@@ -4,8 +4,7 @@ import { defaultMembership } from "../../data/events";
 import { MsrEvent, MsrEvents } from "../../models/data/msr";
 
 export default function MembershipCard(props: { msrEvents: MsrEvents }) {
-  var msrLink: string =
-    "https://www.motorsportreg.com/events/ne-svt-2025-membership-devens-airfield-012532";
+  var msrLink: string = defaultMembership().detailuri;
 
   let membershipEvent;
 
@@ -55,8 +54,9 @@ export default function MembershipCard(props: { msrEvents: MsrEvents }) {
         </time>
         <div className="info">
           <h2 className="title">
-            NE-SVT {new Date().getFullYear()} Membership
+            NE-SVT {new Date().getFullYear()} Annual Membership
           </h2>
+          <p className="desc">Required for all events</p>
 
           <ul>
             <li style={{ width: "50%" }}>

@@ -1,4 +1,5 @@
 import { Container, Image, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { defaultMembership } from "../../data/events";
 
 function Header() {
   return (
@@ -36,7 +37,7 @@ function Header() {
               </NavDropdown.Item>
             </NavDropdown>
 
-            <Nav.Link href="https://www.motorsportreg.com/events/ne-svt-2025-membership-devens-airfield-012532">Contact Us</Nav.Link>
+            <Nav.Link href={defaultMembership().detailuri}>Contact Us</Nav.Link>
           </Nav>
 
           <Nav>
