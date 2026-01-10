@@ -6,14 +6,13 @@ function sortByDate(a: ClubEvent, b: ClubEvent): number {
 }
 
 export function nextEvent(): ClubEvent {
-  var events: ClubEvent[] = getEvents().sort(sortByDate);
-  var now: Date = new Date();
+  const events: ClubEvent[] = getEvents().sort(sortByDate);
+  const now: Date = new Date();
 
   for (let i = events.length - 1; i >= 0; i--) {
     let event = events[i]
 
     if (new Date(event.startDate) > now) {
-      console.log(event)
       return event
     }
   }

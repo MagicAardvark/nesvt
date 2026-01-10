@@ -2,13 +2,12 @@ import { useState } from "react";
 
 export default function HelmetAlert() {
   const [showHelmet, setShowHelmet] = useState(
-    window.localStorage.getItem("helmetDismissed") == null || false
+    window.localStorage.getItem("helmetDismissed") === null
   );
 
   const dismiss = () => {
     window.localStorage.setItem("helmetDismissed", "true");
     setShowHelmet(false);
-    console.log("hello world");
   };
 
   return (

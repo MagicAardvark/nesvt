@@ -5,56 +5,45 @@ export default function SignUpLink(props: {
   event: ClubEvent;
   msrEvents: any;
 }) {
-  let now = new Date();
+  const now = new Date();
 
   function hasMsrEvent(event: ClubEvent, msrEvents: any) {
-    let has = false;
-
-    if (msrEvents == null) {
+    if (msrEvents === null || msrEvents === undefined) {
       return false;
     }
 
-    if (!msrEvents.hasOwnProperty("recordset")) {
+    if (!msrEvents.recordset || msrEvents.recordset.total === 0) {
       return false;
     }
 
-    if (msrEvents.recordset.total == 0) {
+    if (!msrEvents.events || !Array.isArray(msrEvents.events)) {
       return false;
     }
 
-    if (!msrEvents.hasOwnProperty("events")) {
-      return false;
-    }
-
-    var eventDate = parseDate(event.startDate);
-    msrEvents.events.forEach((msrEvent: any) => {
-      var msrDate = parseDate(msrEvent.start);
-
-      if (
-        msrDate.getFullYear() == eventDate.getFullYear() &&
-        msrDate.getMonth() == eventDate.getMonth() &&
-        msrDate.getDate() == eventDate.getDate()
-      ) {
-        has = true;
-      }
+    const eventDate = parseDate(event.startDate);
+    return msrEvents.events.some((msrEvent: any) => {
+      const msrDate = parseDate(msrEvent.start);
+      return (
+        msrDate.getFullYear() === eventDate.getFullYear() &&
+        msrDate.getMonth() === eventDate.getMonth() &&
+        msrDate.getDate() === eventDate.getDate()
+      );
     });
-
-    return has;
   }
 
   function getMsrEvent(
     event: ClubEvent,
     msrEvents: any
   ): { start: string; detailuri: string } {
-    let foundMsrEvent = { start: "", detailuri: "" };
-    var eventDate = parseDate(event.startDate);
+    const foundMsrEvent = { start: "", detailuri: "" };
+    const eventDate = parseDate(event.startDate);
     msrEvents.events.forEach((msrEvent: any) => {
-      var msrDate = parseDate(msrEvent.start);
+      const msrDate = parseDate(msrEvent.start);
 
       if (
-        msrDate.getFullYear() == eventDate.getFullYear() &&
-        msrDate.getMonth() == eventDate.getMonth() &&
-        msrDate.getDate() == eventDate.getDate()
+        msrDate.getFullYear() === eventDate.getFullYear() &&
+        msrDate.getMonth() === eventDate.getMonth() &&
+        msrDate.getDate() === eventDate.getDate()
       ) {
         foundMsrEvent.start = msrEvent.start;
         foundMsrEvent.detailuri = msrEvent.detailuri;
@@ -79,7 +68,7 @@ export default function SignUpLink(props: {
     );
   }
 
-  let msrEvent: { start: string; detailuri: string } = getMsrEvent(
+  const msrEvent: { start: string; detailuri: string } = getMsrEvent(
     props.event,
     props.msrEvents
   );
@@ -94,7 +83,7 @@ export default function SignUpLink(props: {
         <p className="desc">Registration Closed</p>
         <ul>
           <li style={{ width: "50%" }}>
-            <a href="https://msreg.com/SVT-5-8-22">
+            <a href={msrEvent.detailuri}>
               <span className="fa fa-globe"></span> Registration Closed
             </a>
           </li>
@@ -123,27 +112,4 @@ export default function SignUpLink(props: {
   }
 
   return <></>;
-}
-
-{
-  /* <p className="desc">Registration open now!</p>
-<ul>
-  <li style={{ width: "50%" }}>
-    <a href="https://msreg.com/SVT-6-18-22">
-      <span className="fa fa-globe"></span> MotorsportReg Event
-      Signup
-    </a>
-  </li>
-</ul> */
-}
-
-{
-  /* <p className="desc">Registration Closed</p>
-<ul>
-  <li style={{ width: "50%" }}>
-    <a href="https://msreg.com/SVT-5-8-22">
-      <span className="fa fa-globe"></span> Registration Closed
-    </a>
-  </li>
-</ul> */
 }

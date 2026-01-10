@@ -1,28 +1,11 @@
-import { useCallback, useEffect, useState } from "react";
+import { useState } from "react";
 import { Accordion, Container } from "react-bootstrap";
+import { defaultMembership } from "../../data/events";
 
 function Faq() {
-  var msrLink: string =
-  "https://www.motorsportreg.com/events/ne-svt-2023-membership-devens-airfield-785736";
-
-  var hashPrefix: string = "#/faq";
-  const [active, setActive] = useState<string[]>([window.location.hash]);
-
-  console.log(active);
-  // const hashChangeHandler = useCallback(() => {
-  //   setActive([window.location.hash]);
-  // }, []);
-
-  // useEffect(() => {
-  //   window.addEventListener('hashchange', hashChangeHandler);
-  //   return () => {
-  //     window.removeEventListener('hashchange', hashChangeHandler);
-  //   };
-  // }, []);
-
-  // useEffect(() => {
-  //   setActive([window.location.hash]);
-  // }, []);
+  const msrLink: string = defaultMembership().detailuri;
+  const hashPrefix: string = "#/faq";
+  const [active] = useState<string[]>([window.location.hash]);
 
   return (
     <Container>

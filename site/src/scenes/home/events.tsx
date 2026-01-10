@@ -5,13 +5,13 @@ import MembershipCard from "../global/membershipCard";
 import { MsrEvents } from "../../models/data/msr";
 
 function Events(props: { msrEvents: MsrEvents }) {
-  var event: ClubEvent = nextEvent();
+  const event: ClubEvent = nextEvent();
 
   return (
     <>
       <div className="col-md-6">
         <ul className="event-list">
-          <MembershipCard msrEvents={props.msrEvents} />
+          <MembershipCard />
           <EventCard event={event} msrEvents={props.msrEvents} />
         </ul>
 

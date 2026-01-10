@@ -5,8 +5,8 @@ import { ClubEvent } from "../../models/data/event";
 import { MsrEvents } from "../../models/data/msr";
 
 export default function EventCard(props: { event: ClubEvent, msrEvents: MsrEvents }) {
-  var event = props.event;
-  var eventDate: Date = parseDate(event.startDate);
+  const event = props.event;
+  const eventDate: Date = parseDate(event.startDate);
 
   return (
     <li>
