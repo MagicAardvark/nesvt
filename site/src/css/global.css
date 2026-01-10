@@ -402,7 +402,7 @@ body {
 
 /* Helmet Alert */
 .main-app .helmet-alert {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+  background: linear-gradient(135deg, #4b5563 0%, #374151 100%);
   color: white;
   border: none;
   padding: 16px 20px;
