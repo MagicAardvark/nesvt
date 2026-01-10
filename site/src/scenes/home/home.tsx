@@ -8,14 +8,12 @@ function Home(props: {msrEvents: MsrEvents}) {
     <>
       <Jumbotron />
 
-      <div className="container" style={{ paddingTop: "20px" }}>
+      <div className="container page-container-large">
         <div className="row">
           <Events msrEvents={props.msrEvents}/>
           <About />
         </div>
       </div>
-
-      <hr />
     </>
   );
 }

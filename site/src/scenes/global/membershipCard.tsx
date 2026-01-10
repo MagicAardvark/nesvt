@@ -17,7 +17,7 @@ export default function MembershipCard() {
           <p className="desc">Required for all events</p>
 
           <ul>
-            <li style={{ width: "50%" }}>
+            <li className="signup-link-item">
               <a href={msrLink}>
                 <span className="fa fa-globe"></span> MotorsportReg Signup
               </a>

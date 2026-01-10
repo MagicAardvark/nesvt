@@ -7,6 +7,7 @@ import Faq from "./scenes/faq/faq";
 import Gallery from "./scenes/gallery/gallery";
 
 import Header from "./scenes/global/header";
+import Footer from "./scenes/global/footer";
 import HelmetAlert from "./scenes/global/helmetAlert";
 import Home from "./scenes/home/home";
 import Results from "./scenes/results/Results";
@@ -46,9 +47,10 @@ function App() {
   }, []);
 
   const showHeaderAndAlert = location.pathname !== "/results";
+  const isResultsPage = location.pathname === "/results";
 
   return (
-    <>
+    <div className={isResultsPage ? "results-page" : "main-app"}>
       {showHeaderAndAlert && <Header />}
       <Routes>
         <Route path="/" element={<Home msrEvents={events}/>} />
@@ -58,7 +60,8 @@ function App() {
         <Route path="/events" element={<Events msrEvents={events}/>} />
       </Routes>
       {showHeaderAndAlert && <HelmetAlert />}
-    </>
+      {showHeaderAndAlert && <Footer />}
+    </div>
   );
 }
 

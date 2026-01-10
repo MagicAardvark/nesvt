@@ -1,67 +1,103 @@
-
-/*
-body {
-    background-image: linear-gradient(to top, #ecedee 0%, #eceeef 75%, #e7e8e9 100%);
-    min-height: 100vh;
-    font: normal 16px sans-serif;
-}
-*/
-
-.container.gallery-container {
-    background-color: #fff;
+/* ============================================
+   Gallery Styles - scoped to main app
+   ============================================ */
+.main-app .container.gallery-container {
+    background-color: transparent;
     color: #35373a;
-    min-height: 100vh;
-    border-radius: 0px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
+    padding: 0;
 }
 
-.gallery-container h1 {
+.main-app .gallery-container h1 {
     text-align: center;
-    margin-top: 70px;
-    font-family: 'Droid Sans', sans-serif;
-    font-weight: bold;
+    margin-top: 0;
+    font-weight: 700;
+    letter-spacing: -0.5px;
 }
 
-.gallery-container p.page-description {
+.main-app .gallery-container p.page-description {
     text-align: center;
     max-width: 800px;
     margin: 25px auto;
-    color: #888;
-    font-size: 18px;
+    color: var(--text-secondary);
+    font-size: 1.15rem;
+    line-height: 1.7;
 }
 
-.tz-gallery {
-    padding: 40px;
+.main-app .tz-gallery {
+    padding: 0;
 }
 
-.tz-gallery .lightbox img {
+.main-app .tz-gallery .lightbox {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    margin-bottom: 24px;
+    transition: var(--transition);
+    background: var(--card-bg);
+    box-shadow: var(--shadow-md);
+}
+
+.main-app .tz-gallery .lightbox:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.main-app .tz-gallery .lightbox img {
     width: 100%;
-    margin-bottom: 30px;
-    transition: 0.2s ease-in-out;
-    box-shadow: 0 2px 3px rgba(0,0,0,0.2);
+    height: auto;
+    display: block;
+    margin-bottom: 0;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: var(--border-radius);
+    object-fit: cover;
 }
 
-
-.tz-gallery .lightbox img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+.main-app .tz-gallery .lightbox:hover img {
+    transform: scale(1.03);
 }
 
-.tz-gallery img {
-    border-radius: 4px;
+.main-app .tz-gallery img {
+    border-radius: var(--border-radius);
 }
 
-.baguetteBox-button {
-    background-color: transparent !important;
+.main-app .tz-gallery .row {
+    margin: 0;
 }
 
+.main-app .tz-gallery .row > [class*="col-"] {
+    padding: 12px;
+}
+
+.main-app .baguetteBox-button {
+    background-color: rgba(59, 130, 246, 0.9) !important;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    transition: var(--transition);
+}
+
+.main-app .baguetteBox-button:hover {
+    background-color: rgba(37, 99, 235, 0.95) !important;
+    transform: scale(1.1);
+}
+
+.main-app .baguetteBox-button#next-button::after,
+.main-app .baguetteBox-button#previous-button::after {
+    border-color: #ffffff;
+}
+
+.main-app .baguetteBox-button#close-button::before,
+.main-app .baguetteBox-button#close-button::after {
+    background-color: #ffffff;
+}
 
 @media(max-width: 768px) {
-    body {
-        padding: 0;
+    .main-app .tz-gallery .row > [class*="col-"] {
+        padding: 8px;
     }
 
-    .container.gallery-container {
-        border-radius: 0;
+    .main-app .tz-gallery .lightbox {
+        margin-bottom: 16px;
     }
 }

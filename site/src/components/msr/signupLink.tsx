@@ -58,10 +58,8 @@ export default function SignUpLink(props: {
       <>
         <p className="desc">Registration will open 30 days prior.</p>
         <ul>
-          <li style={{ width: "50%" }}>
-            <a href="#website">
+          <li className="signup-link-item">
               <span className="fa fa-globe"></span> {now < parseDate(props.event.startDate) ? "Event signup coming soon" : "Past Event"}
-            </a>
           </li>
         </ul>
       </>
@@ -82,7 +80,7 @@ export default function SignUpLink(props: {
       <>
         <p className="desc">Registration Closed</p>
         <ul>
-          <li style={{ width: "50%" }}>
+          <li className="signup-link-item">
             <a href={msrEvent.detailuri}>
               <span className="fa fa-globe"></span> Registration Closed
             </a>
@@ -101,7 +99,7 @@ export default function SignUpLink(props: {
       <>
         <p className="desc">Registration open now!</p>
         <ul>
-          <li style={{ width: "50%" }}>
+          <li className="signup-link-item">
             <a href={msrEvent.detailuri}>
               <span className="fa fa-globe"></span> MotorsportReg Event Signup
             </a>

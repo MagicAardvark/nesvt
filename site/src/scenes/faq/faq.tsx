@@ -8,8 +8,16 @@ function Faq() {
   const [active] = useState<string[]>([window.location.hash]);
 
   return (
-    <Container>
-      <Accordion defaultActiveKey={active} flush>
+    <Container className="page-container">
+      <div className="page-header-large">
+        <h1 className="page-title">
+          Frequently Asked Questions
+        </h1>
+        <p className="lead page-description">
+          Everything you need to know about NE-SVT Autocross
+        </p>
+      </div>
+      <Accordion defaultActiveKey={active} flush className="faq-accordion">
         <Accordion.Item eventKey={hashPrefix + "#autocross101"}>
           <Accordion.Header>What is Autocross?</Accordion.Header>
           <Accordion.Body>
@@ -18,10 +26,6 @@ function Faq() {
             <div className="video-responsive">
               <iframe
                 src="https://player.vimeo.com/video/12067348"
-                style={{
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
               ></iframe>
             </div>
             <p className="lead">
@@ -142,10 +146,11 @@ function Faq() {
               on the north side of the site
             </p>
 
-            <p>
+            <p className="faq-image-wrapper">
               <img
                 src="images/devens.svg"
-                style={{ width: "100%", maxWidth: "600px" }}
+                className="faq-image"
+                alt="Directions to Devens Airfield"
               />
             </p>
           </Accordion.Body>

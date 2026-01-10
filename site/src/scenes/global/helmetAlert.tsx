@@ -13,17 +13,16 @@ export default function HelmetAlert() {
   return (
     <>
       {showHelmet && (
-        <div className="alert-bottom alert alert-danger" id="helmetAlert">
-          <a
-            href="#"
-            className="close"
-            data-dismiss="alert"
+        <div className="alert-bottom alert alert-danger helmet-alert" id="helmetAlert">
+          <button
+            type="button"
+            className="close helmet-alert-close"
             aria-label="close"
             onClick={dismiss}
           >
             &times;
-          </a>
-          <strong>REMINDER</strong> -- All helmets must be Snell M2015 / SA2015
+          </button>
+          <strong>REMINDER</strong> — All helmets must be Snell M2015 / SA2015
           or newer.
         </div>
       )}

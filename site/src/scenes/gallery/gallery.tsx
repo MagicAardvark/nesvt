@@ -1,7 +1,15 @@
 function Gallery() {
   return (
     <>
-      <div className="container gallery-container">
+      <div className="container gallery-container page-container">
+        <div className="page-header-large">
+          <h1 className="page-title-center">
+            Gallery
+          </h1>
+          <p className="lead page-description-center">
+            Photos from our autocross events
+          </p>
+        </div>
         <div className="tz-gallery">
           <div className="row">
             <div className="col-sm-6 col-md-4">

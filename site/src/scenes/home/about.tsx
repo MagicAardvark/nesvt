@@ -1,7 +1,7 @@
 function About() {
   return (
     <>
-      <div className="col-md-6">
+      <div className="col-md-6 about-section">
         <h3>About</h3>
         <p className="lead">
           NE-SVT is a non-profit club that was founded in 1998. We are run

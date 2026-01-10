@@ -3,10 +3,11 @@ import { defaultMembership } from "../../data/events";
 
 function Header() {
   return (
-    <Navbar variant="dark" bg="dark" expand="lg">
+    <Navbar variant="dark" bg="dark" expand="lg" className="navbar-modern">
       <Container fluid>
-        <Navbar.Brand href="./">
-          <Image src="images/logo2.png" width={35} height={35} />
+        <Navbar.Brand href="./" className="navbar-brand-modern">
+          <Image src="images/logo2.png" width={40} height={40} className="navbar-brand-logo" />
+          <span className="navbar-brand-text">NE-SVT</span>
         </Navbar.Brand>
 
         <Navbar.Collapse>

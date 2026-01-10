@@ -15,14 +15,13 @@ function Events(props: { msrEvents: MsrEvents }) {
           <EventCard event={event} msrEvents={props.msrEvents} />
         </ul>
 
-        <p>
+        <p className="home-events-button">
           <a
             className="btn btn-primary"
             href="./#/events"
-            style={{ width: "100%" }}
             role="button"
           >
-            View More Events
+            View All Events
           </a>
         </p>
       </div>
