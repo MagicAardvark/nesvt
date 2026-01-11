@@ -40,19 +40,6 @@ function Header() {
 
             <Nav.Link href={defaultMembership().detailuri}>Contact Us</Nav.Link>
           </Nav>
-
-          <Nav>
-            <Navbar.Brand>
-              <a href="https://motorsportreg.com" className="msr-link">
-                <img
-                  src="https://msr-hotlink.s3.amazonaws.com/powered-by/powered-by-msr-outline@2x.png"
-                  alt="Online registration and event management service for motorsport events powered by MotorsportReg.com"
-                  title="Online registration and event management service for motorsport events powered by MotorsportReg.com"
-                  className="msr-img"
-                />
-              </a>
-            </Navbar.Brand>
-          </Nav>
         </Navbar.Collapse>
 
         <Navbar.Toggle />

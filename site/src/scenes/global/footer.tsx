@@ -33,16 +33,6 @@ function Footer() {
               <li>
                 <a href={msrLink}>Contact Us</a>
               </li>
-              <li>
-                <a href="https://motorsportreg.com" className="msr-link-footer">
-                  <img
-                    src="https://msr-hotlink.s3.amazonaws.com/powered-by/powered-by-msr-outline@2x.png"
-                    alt="Online registration and event management service for motorsport events powered by MotorsportReg.com"
-                    title="Online registration and event management service for motorsport events powered by MotorsportReg.com"
-                    className="msr-img-footer"
-                  />
-                </a>
-              </li>
             </ul>
           </Col>
         </Row>
