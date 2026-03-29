@@ -1,5 +1,6 @@
 import { Container, Image, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { defaultMembership } from "../../data/events";
+import { LIVE_RESULTS_URL } from "../../constants/links";
 
 function Header() {
   return (
@@ -14,7 +15,7 @@ function Header() {
           <Nav className="me-auto">
             <Nav.Link href="./">Home</Nav.Link>
 
-            <Nav.Link href="./#/results">Live Timing</Nav.Link>
+            <Nav.Link href={LIVE_RESULTS_URL}>Live Timing</Nav.Link>
 
             <Nav.Link href="./#/events">Events</Nav.Link>
 

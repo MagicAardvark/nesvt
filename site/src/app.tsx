@@ -10,7 +10,7 @@ import Header from "./scenes/global/header";
 import Footer from "./scenes/global/footer";
 import HelmetAlert from "./scenes/global/helmetAlert";
 import Home from "./scenes/home/home";
-import Results from "./scenes/results/Results";
+import ResultsRedirect from "./scenes/global/resultsRedirect";
 
 function App() {
   const [events, setEvents] = useState<MsrEvents>({} as MsrEvents);
@@ -55,7 +55,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home msrEvents={events}/>} />
         <Route path="/gallery" element={<Gallery />} />
-        <Route path="/results" element={<Results />} />
+        <Route path="/results" element={<ResultsRedirect />} />
         <Route path="/faq" element={<Faq />} />
         <Route path="/events" element={<Events msrEvents={events}/>} />
       </Routes>

@@ -1,5 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
 import { defaultMembership } from "../../data/events";
+import { LIVE_RESULTS_URL } from "../../constants/links";
 
 function Footer() {
   const currentYear = new Date().getFullYear();
@@ -23,7 +24,7 @@ function Footer() {
               <li><a href="./#/events">Events</a></li>
               <li><a href="./#/gallery">Gallery</a></li>
               <li><a href="./#/faq">FAQ</a></li>
-              <li><a href="./#/results">Live Timing</a></li>
+              <li><a href={LIVE_RESULTS_URL}>Live Timing</a></li>
             </ul>
           </Col>
           

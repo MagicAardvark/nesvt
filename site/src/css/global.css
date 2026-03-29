@@ -257,6 +257,14 @@ body {
   padding-bottom: 60px;
 }
 
+/* External results redirect fallback (shown briefly if JS is slow) */
+.results-redirect-fallback {
+  text-align: center;
+  padding: 3rem 1rem;
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
 .main-app .page-container-large {
   padding-top: 30px;
   padding-bottom: 60px;
