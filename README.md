@@ -11,5 +11,5 @@ Website for `ne-svt.org` and live timing.
 docker-compose up
 
 # build site (builds the prod version)
-docker run -it --rm -v `pwd`/results:/app -w /app -u 1000 node:16 npm run build
+docker run -it --rm -v `pwd`/results:/app -w /app -u 1000 node:24 npm run build
 ```
